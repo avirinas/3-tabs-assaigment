@@ -1,0 +1,59 @@
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 507px;
+
+    button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 250px;
+    background: none;
+    border: 3px solid white;
+    border-right: none;
+    color: $text-cl-1;
+    font-size: 1.2em;
+    transition: 0.3s;
+    &::after{
+        position: absolute;
+        content: "";
+        background: $background-cl-3;
+        width: 3px;
+        height: 169px;
+        transform: translateX(40px);
+        transition: 0.2s;
+    }
+    &::before{
+        position: absolute;
+        content: "";
+        background: #E0DDAA;
+        width: 10px;
+        height: 169px;
+        transform: translateX(-20px);
+        opacity: 0;
+        transition: 0.5s;
+
+    }
+
+    &:hover{
+    cursor: crosshair;
+    background: $background-cl-3;
+    color: $text-cl-2;
+    }
+}
+}
+.selected{
+
+    background: $background-cl-3;
+    color: $text-cl-2;
+    &::before{
+        transform: scaleY(0.15) translateX(40px) !important;
+        opacity: 1 !important;
+    }
+    &::after{
+        opacity: 0;
+    }
+}
